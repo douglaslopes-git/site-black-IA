@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Black Swords</title>
+        <style>
+        /* Importação das fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #333333;
+        }
+
+        /* SESSÃO 1 */
+        .section-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .section-1 .content {
+            flex: 1;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 120px;
+        }
+
+        .section-1 .content .title-container {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: start;
+        }
+
+        .section-1 .title-container h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #C0C0C0;
+            margin-bottom: 10px;
+        }
+
+        .section-1 h2 {
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            margin-bottom: 20px;
+        }
+
+        .section-1 .button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 240px;
+            height: 60px;
+            background-color: transparent;
+            border: 2px solid #CE9F41;
+            border-radius: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #C0C0C0;
+            padding: 0 20px;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .section-1 .button::after {
+            content: '\2192';
+            position: absolute;
+            right: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-1 .button::before {
+            content: '';
+            position: absolute;
+            right: 55px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background-color: #CE9F41;
+        }
+
+        .section-1 .image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+        }
+
+        .section-1 .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px 0 0 30px;
+        }
+
+        /* SESSÃO 2 */
+        .section-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #000000;
+        }
+
+        .section-2 .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+            background: #C0C0C0;
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .section-2 .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .section-2 .left h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #333333;
+            line-height: 1.2;
+        }
+
+        .section-2 .left img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .section-2 .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-2 .right .topic {
+            text-align: left;
+        }
+
+        .section-2 .right .topic h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #333333;
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+
+        .section-2 .right .topic p {
+            font-size: 1rem;
+            color: #333333;
+        }
+
+        .section-3 {
+            background-color: #C0C0C0;
+            padding: 60px 40px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .section-3 .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-3 .title {
+            font-size: 36px;
+            color: #333333;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .section-3 .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .section-3 .topics {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-3 .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .section-3 .topic {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-3 .topic h4 {
+            font-size: 1.2rem;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .section-3 .topic p {
+            font-size: 1rem;
+            color: #333333;
+        }
+
+        .section-4 {
+        background-color: #C0C0C0;
+        padding: 60px 40px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .topic {
+        position: relative;
+        padding: 40px;
+        color: #FFF;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        text-align: center;
+        height: 20%px;
+        margin-top: 24px;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #CE9F41;
+    }
+        @media (max-width: 768px) {
+            .section-3 .row {
+                flex-direction: column;
+            }
+        }
+
+        .footer {
+    background-color: #000000;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 120px;
+    opacity: 0.5;
+}
+
+.footer-divider {
+    width: 3px;
+    height: 80px;
+    background-color: #CE9F41;
+    border-radius: 3px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.footer-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: #FFFFFF;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-item img {
+    width: 24px;
+}
+
+    </style>
+    </head>
+
+    <body>
+        <!-- SESSÃO 1 -->
+        <section class="section-1">
+            <div class="content">
+                <div class="title-container">
+                    <h1>Clã Black Swords</h1>
+
+                    <h2>Forjando <span style="color: #CE9F41;">guerreiros</span>
+                        para a eternidade</h2>
+                    <div class="button">Sobre nós</div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="./images/espada-session-1.png" alt="Imagem do clã">
+            </div>
+        </section>
+
+        <!-- SESSÃO 2 -->
+        <section class="section-2">
+            <div class="container">
+                <div class="left">
+                    <img src="./images/logo.png" alt="Logo">
+                    <h3>Sobre<br>Nós</h3>
+                </div>
+                <div class="right">
+                    <div class="topic">
+                        <h4>Tópico 1</h4>
+                        <p>Sessões regulares para aprimorar técnicas de combate
+                            com espadas medievais, focando em postura,
+                            ataques e defesas.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>Tópico 2</h4>
+                        <p>Testimonials are short quotes from people who love
+                            your brand. It's a great way to convince customers
+                            to try your services.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>Tópico 3</h4>
+                        <p>Testimonials are short quotes from people who love
+                            your brand. It's a great way to convince customers
+                            to try your services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SESSÃO 3 -->
+        <section class="section-3">
+            <div class="container">
+                <h2 class="title">Forjando Guerreiros: Nossas Atividades</h2>
+                <h3 class="subtitle">Disciplina, técnica e paixão pela esgrima
+                    medieval</h3>
+                <div class="topics">
+                    <div class="row">
+                        <div class="topic">
+                            <h4>Tópico 1</h4>
+                            <p>Sessões regulares para aprimorar técnicas de
+                                combate com espadas medievais, focando em
+                                postura, ataques e defesas</p>
+                        </div>
+                        <div class="topic">
+                            <h4>Tópico 2</h4>
+                            <p>Sessões regulares para aprimorar técnicas de
+                                combate com espadas medievais, focando em
+                                postura, ataques e defesas</p>
+                        </div>
+                        <div class="topic">
+                            <h4>Tópico 3</h4>
+                            <p>Sessões regulares para aprimorar técnicas de
+                                combate com espadas medievais, focando em
+                                postura, ataques e defesas</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="topic">
+                            <h4>Tópico 4</h4>
+                            <p>Sessões regulares para aprimorar técnicas de
+                                combate com espadas medievais, focando em
+                                postura, ataques e defesas</p>
+                        </div>
+                        <div class="topic">
+                            <h4>Tópico 5</h4>
+                            <p>Sessões regulares para aprimorar técnicas de
+                                combate com espadas medievais, focando em
+                                postura, ataques e defesas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-4">
+            <h2 class="section-title">Armas e Armaduras: O Legado dos
+                Guerreiros</h2>
+            <h3 class="section-subtitle">Forjados na história, preparados para a
+                batalha!</h3>
+
+            <div class="topic"
+                style="background-image: url('./images/1.png');">
+                <h4>⚔ <span class="highlight">Espadas e Lâminas</span></h4>
+                <p>Espadas longas, bastardas e curtas, reproduzidas com precisão
+                    histórica para duelos e treinamentos.</p>
+            </div>
+
+            <div class="topic"
+                style="background-image: url('./images/2.png');">
+                <h4>🛡 <span class="highlight">Escudos e Proteção</span></h4>
+                <p>Escudos de madeira e metal reforçado, utilizados para defesa
+                    e controle no combate corpo a corpo.</p>
+            </div>
+
+            <div class="topic"
+                style="background-image: url('./images/3.png');">
+                <h4>🏰 <span class="highlight">Armaduras e
+                        Vestimentas</span></h4>
+                <p>Cotas de malha, elmos, manoplas e gambesões que garantem
+                    proteção sem comprometer a mobilidade.</p>
+            </div>
+
+            <div class="topic"
+                style="background-image: url('./images/5.png');">
+                <h4>🏹 <span class="highlight">Armas de Combate à
+                        Distância</span></h4>
+                <p>Lanças, bestas e arcos longos utilizados em treinamentos
+                    táticos de ataque e defesa.</p>
+            </div>
+
+            <div class="topic"
+                style="background-image: url('./images/4.png');">
+                <h4>⚒ <span class="highlight">Acessórios e
+                        Manutenção</span></h4>
+                <p>Manutenção de lâminas, afiadores, suportes para treinamento e
+                    kits de customização de armaduras.</p>
+            </div>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <img src="./images/logo.png" alt="Black Swords Logo"
+                        class="footer-logo">
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-right">
+                    <div class="footer-item">
+                        <img src="./images/instagram.png" alt="Instagram">
+                        <span>@clablackswords</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="./images/telefone.png" alt="Telefone">
+                        <span>(11) 9 8931 9110</span>
+                    </div>
+                    <div class="footer-item">
+                        <img src="./images/mapa.png" alt="Endereço">
+                        <span>Praça Samuel Sabatini - SBC</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
